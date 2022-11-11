@@ -221,5 +221,24 @@ class EditStudent extends StatelessWidget {
     );
     editList(index, studentmodel);
     Navigator.of(context).pop();
+
+    if (name.isEmpty ||
+        age.isEmpty ||
+        phone.isEmpty ||
+        place.isEmpty ||
+        Provider.of<StudentProvider>(context, listen: false)
+            .image!
+            .path
+            .isEmpty) {
+      return;
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          behavior: SnackBarBehavior.floating,
+          margin: EdgeInsets.all(20),
+          content: Text("Sucessfully Student Updated .. "),
+        ),
+      );
+    }
   }
 }

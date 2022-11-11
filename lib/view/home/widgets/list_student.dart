@@ -40,6 +40,13 @@ class ListStudent extends StatelessWidget {
                 trailing: IconButton(
                   onPressed: () {
                     deleteStudent(index);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        behavior: SnackBarBehavior.floating,
+                        margin: EdgeInsets.all(20),
+                        content: Text("Sucessfully Student Removed .. "),
+                      ),
+                    );
                   },
                   icon: Icon(
                     Icons.delete_forever,
