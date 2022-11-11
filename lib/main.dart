@@ -3,8 +3,8 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:providerdata/controller/provider/providerstate.dart';
 
-import '../db/model/data_model.dart';
-import '../screens/home/screen_home.dart';
+import 'model/model/data_model.dart';
+import 'view/home/screen_home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

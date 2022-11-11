@@ -1,10 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:providerdata/controller/provider/providerstate.dart';
+import 'package:providerdata/model/functions/db_functions.dart';
+import 'package:providerdata/model/model/data_model.dart';
 
-import '../../../db/functions/db_functions.dart';
-import '../../../db/model/data_model.dart';
 import 'student_full_details.dart';
 
 class ListStudent extends StatelessWidget {
@@ -27,24 +25,18 @@ class ListStudent extends StatelessWidget {
             itemBuilder: ((ctx, index) {
               final data = studentList[index];
               return ListTile(
-                leading: Consumer<StudentProvider>(
-                  builder: (context, value, child) {
-                    return CircleAvatar(
-                      radius: 30,
-                      backgroundImage: FileImage(
-                        File(value.image!.path),
-                      ),
-                    );
-                  },
+                leading: CircleAvatar(
+                  radius: 30,
+                  backgroundImage: FileImage(
+                    File(data.photo),
+                  ),
                 ),
                 title: Text(
                   data.name,
                   style: const TextStyle(color: Colors.white),
                 ),
-                subtitle: Text(
-                  data.place,
-                  style: const TextStyle(color: Colors.white),
-                ),
+                subtitle: Text(data.place,
+                    style: const TextStyle(color: Colors.white)),
                 trailing: IconButton(
                   onPressed: () {
                     deleteStudent(index);
@@ -71,10 +63,7 @@ class ListStudent extends StatelessWidget {
               );
             }),
             separatorBuilder: (ctx, index) {
-              return const Divider(
-                thickness: 5,
-                color: Colors.white24,
-              );
+              return const Divider();
             },
             itemCount: studentList.length,
           );

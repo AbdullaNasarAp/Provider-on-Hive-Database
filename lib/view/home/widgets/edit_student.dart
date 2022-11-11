@@ -1,12 +1,10 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 
-import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:providerdata/controller/provider/providerstate.dart';
-
-import '../../../db/functions/db_functions.dart';
-import '../../../db/model/data_model.dart';
+import 'package:providerdata/model/functions/db_functions.dart';
+import 'package:providerdata/model/model/data_model.dart';
 
 class EditStudent extends StatelessWidget {
   EditStudent(

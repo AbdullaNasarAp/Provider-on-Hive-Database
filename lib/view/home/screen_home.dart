@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:providerdata/model/functions/db_functions.dart';
 
-import '../../db/functions/db_functions.dart';
 import 'widgets/add_student.dart';
 import 'widgets/list_student.dart';
 import 'widgets/search_student.dart';
